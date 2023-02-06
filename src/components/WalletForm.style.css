@@ -1,0 +1,40 @@
+form {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  align-items: center;
+  justify-items: center;
+  grid-gap: 1rem;
+}
+
+form > h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.1rem;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.1rem;
+}
+
+button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: #d0f4de;
+    color: var(--color-secondary);
+    font-weight: bold;
+    height: min-content;
+}
+
+button:hover {
+    background-color: #b3e6cc;
+}
+

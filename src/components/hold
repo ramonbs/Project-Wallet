@@ -1,0 +1,104 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { editingExpense } from '../redux/actions';
+
+function EditTable(props) {
+  const { currencies, dispatch } = props;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const { value, description, currencies: currency, method, tag } = e.target;
+    const newExpense = {
+      id: 0,
+      value: value.value,
+      description: description.value,
+      currency: currency.value,
+      method: method.value,
+      tag: tag.value,
+    };
+    dispatch(editingExpense(newExpense));
+  }
+
+  return (
+    <form
+      onSubmit={
+        (e) => handleSubmit(e)
+      }
+    >
+      <label htmlFor="value">
+        Despesas
+        <input
+          className="input"
+          type="text"
+          name="value"
+          data-testid="value-input"
+        />
+      </label>
+      Descrição
+      <label htmlFor="description">
+        <input
+          className="input"
+          type="text"
+          name="description"
+          data-testid="description-input"
+        />
+      </label>
+      <label htmlFor="currencies">
+        Moedas
+        <select
+          name="currencies"
+          data-testid="currency-input"
+        >
+          {currencies.map((currency) => (
+            <option
+              key={ currency }
+              value={ currency }
+            >
+              { currency }
+            </option>))}
+
+        </select>
+      </label>
+      <label htmlFor="method">
+        Método Pagamento
+        <select
+          name="method"
+          data-testid="method-input"
+        >
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão de débito">Cartão de débito</option>
+          <option value="Cartão de crédito">Cartão de crédito</option>
+        </select>
+      </label>
+      <label htmlFor="tag">
+        Tipo da despesa
+        <select
+          name="tag"
+          data-testid="tag-input"
+        >
+          <option value="Alimentação">Alimentação</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Saúde">Saúde</option>
+        </select>
+      </label>
+      <button type="submit">Editar despesa</button>
+    </form>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  currencies: state.wallet.currencies,
+  isLoading: state.wallet.isLoading,
+  expenses: state.wallet.expenses,
+});
+
+EditTable.propTypes = {
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps)(EditTable);

@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+th {
+    background-color: #d0f4de;
+    color: var(--color-secondary);
+}
