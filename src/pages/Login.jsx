@@ -36,7 +36,7 @@ function Login(props) {
     <section className="container">
       <div>
         <h1>
-          Trybe Wallets
+          Wallet
         </h1>
         <div className="input-container">
           <label htmlFor="email">
