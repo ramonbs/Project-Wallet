@@ -7,7 +7,7 @@ function Header(props) {
   const { email, expenses } = props;
   return (
     <header>
-      <h1>Trybe Wallet</h1>
+      <h1>Wallet</h1>
       <h3 data-testid="email-field">{email}</h3>
       <div>
         <p>
