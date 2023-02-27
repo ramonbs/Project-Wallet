@@ -1,7 +1,5 @@
-# project-wallet
-Project wallet
-
-Welcome to the React Wallet! This is a simple wallet application built on React, which uses ESLint, Cypress, RTL, Jest, CSS, and JavaScript.
+# Project Wallet
+Welcome to the React Wallet! This is a simple wallet application built on React, using redux.js, thunk, ESLint, Cypress, RTL, Jest, CSS, and JavaScript.
 
 ## Installation
 To install the Wallet, please follow the steps below:
