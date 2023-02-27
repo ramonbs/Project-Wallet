@@ -21,7 +21,7 @@ cd project-wallet
 npm install
 ```
 
-> This command will install all the required packages, including ESLint, RTL, and Jest.
+> This command will install all the required packages, including redux, ESLint, RTL, and Jest.
 
 ## Usage
 To run the project, use the following command:
