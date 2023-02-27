@@ -16,7 +16,7 @@ git clone git@github.com:ramonbs/project-wallet.git
 cd project-wallet
 ```
 
-4.Install the required dependencies using npm:
+4. Install the required dependencies using npm:
 ```
 npm install
 ```
